@@ -283,6 +283,8 @@ def relatorios():
         comparativo=comparativo)
 
 # EXECUTAR
+import os
+
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
@@ -290,4 +292,6 @@ if __name__ == '__main__':
             novo_usuario = Usuario(nome='HGMOTO', senha='hgmotopecas2025')
             db.session.add(novo_usuario)
             db.session.commit()
-    app.run(debug=True)
+
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
