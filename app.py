@@ -5,7 +5,7 @@ from datetime import date
 
 app = Flask(__name__)
 app.secret_key = 'chave_super_secreta'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/banco.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
 db = SQLAlchemy(app)
 
 # MODELOS
@@ -292,5 +292,6 @@ if __name__ == '__main__':
             novo_usuario = Usuario(nome='HGMOTO', senha='hgmotopecas2025')
             db.session.add(novo_usuario)
             db.session.commit()
+
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
