@@ -5,7 +5,7 @@ from datetime import date
 
 app = Flask(__name__)
 app.secret_key = 'chave_super_secreta'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///banco.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///instance/banco.db'
 db = SQLAlchemy(app)
 
 # MODELOS
